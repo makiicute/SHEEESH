@@ -1,0 +1,33 @@
+from tkinter import *
+from tkinter.ttk import *
+window = Tk()
+window.geometry("500x250+10+20")
+window.title("Midterm in OOP")
+
+def process_name():
+
+    global name_entry
+    print("Hi {}".format(name_entry.get()))
+
+    global nameLabel
+    nameLabel.configure(text=f'Hi {name_entry.get()}')
+
+
+def main():
+
+
+    global name_entry, nameLabel
+    name_label = Label(window, text='Enter your full name below:')
+    name_label.grid(row=0, column=0)
+    name_entry = Entry(window)
+    name_entry.grid(row=1, column=0)
+    button = Button(window, text='Click to display your name', command=process_name, padding=10)
+    button.grid(row=1, column=3, columnspan=3)
+
+    nameLabel = Label(window, text=' ')
+    nameLabel.grid(row=2)
+
+    window.mainloop()
+
+
+main()
